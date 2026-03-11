@@ -12,10 +12,8 @@
         iframe { width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 4px; }
         .footer { margin-top: 30px; font-size: 0.8em; color: #7f8c8d; }
         
-        /* 追加したスタイル：クリック後のメッセージ用 */
         #click_status { margin-top: 10px; color: #27ae60; font-weight: bold; min-height: 1.5em; }
         #main_button { padding: 8px 16px; cursor: pointer; background-color: #f8f9fa; border: 1px solid #ccc; border-radius: 4px; }
-        #main_button:active { background-color: #e2e6ea; }
     </style>
 </head>
 <body>
@@ -26,59 +24,14 @@
 </header>
 
 <div class="container">
-    <div class="frame-box">
-        <div class="frame-label">Frame Index: 0 (お問い合わせフォーム)</div>
-        <iframe srcdoc='
-            <style>body{font-family:sans-serif;background:#fffbe6;padding:10px;}</style>
-            <h3>お問い合わせ</h3>
-            <p>お名前：<input type="text" id="name_input" placeholder="ここに入力"></p>
-            <button onclick="alert(\"送信完了\")">送信</button>
-        '></iframe>
-    </div>
-
-    <div class="frame-box">
-        <div class="frame-label">Frame Index: 1 (ニュース)</div>
-        <iframe srcdoc='
-            <style>body{font-family:sans-serif;background:#eef9ff;padding:10px;}</style>
-            <h3>最新ニュース</h3>
-            <ul>
-                <li>RPA導入で業務効率化！</li>
-                <li>フレーム切り替えのコツとは？</li>
-            </ul>
-            <a href="#" id="news_link">詳細を見る</a>
-        '></iframe>
-    </div>
-
-    <div class="frame-box">
-        <div class="frame-label">Frame Index: 2 (アンケート)</div>
-        <iframe srcdoc='
-            <style>body{font-family:sans-serif;background:#f9f0ff;padding:10px;}</style>
-            <h3>満足度調査</h3>
-            <input type="radio" name="star" id="star5"> <label for="star5">満足</label><br>
-            <input type="radio" name="star" id="star1"> <label for="star1">不満</label>
-        '></iframe>
-    </div>
-
     <div class="frame-box" style="border-style: solid; border-color: #27ae60;">
-        <div class="frame-label" style="color: #27ae60;">Main Content (フレーム外)</div>
-        <p>ここはメインのドキュメントです。</p>
+        <div class="frame-label" style="color: #27ae60;">Main Content (フレーム外 / 親画面)</div>
+        <p>ここはメインのドキュメントです。フレームに入る前にここを操作できます。</p>
         <button id="main_button" onclick="showClickResult()">メインのボタン</button>
         <div id="click_status"></div>
     </div>
-</div>
 
-<script>
-    // メインボタンをクリックした時に文字を表示する
-    function showClickResult() {
-        const statusDiv = document.getElementById('click_status');
-        const now = new Date();
-        statusDiv.innerText = "✅ " + now.toLocaleTimeString() + " にクリックされました！";
-    }
-</script>
-
-<div class="footer">
-    ※各フレーム内を操作する前に、必ず「ブラウザフレームを切り替え」コマンドを実行してください。
-</div>
-
-</body>
-</html>
+    <div class="frame-box">
+        <div class="frame-label">Frame Index: 0 (お問い合わせフォーム)</div>
+        <iframe srcdoc='
+            <style>body{font-family:sans-serif;background:#fffbe6;padding:10px;
