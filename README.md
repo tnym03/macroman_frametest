@@ -50,4 +50,28 @@
     <div class="frame-box">
         <div class="frame-label">Index: 2 / ID: id_survey</div>
         <iframe id="id_survey" name="name_survey" srcdoc='
-            <style>body{font-family:sans-serif;background:#f9f0ff
+            <style>body{font-family:sans-serif;background:#f9f0ff;padding:10px;}</style>
+            <h3>満足度調査</h3>
+            <input type="radio" name="star" id="star5"> <label for="star5">満足</label>
+        '></iframe>
+    </div>
+
+    <div class="frame-box" style="border-style: solid; border-color: #27ae60;">
+        <div class="frame-label" style="color: #27ae60;">Main Content (フレーム外)</div>
+        <p>ここはメインのドキュメントです。</p>
+        
+        <button id="main_button" onclick="showMsg()">メインのボタンをクリック</button>
+        <div id="message_area"></div>
+    </div>
+</div>
+
+<script>
+    // ボタンが押されたら文字を出す関数
+    function showMsg() {
+        const area = document.getElementById('message_area');
+        area.innerText = "✅ メインフレームのボタンをクリックしました！ (" + new Date().toLocaleTimeString() + ")";
+    }
+</script>
+
+</body>
+</html>
