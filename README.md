@@ -7,9 +7,9 @@
         body { font-family: sans-serif; background-color: #f4f7f6; margin: 20px; color: #333; }
         header { background: #2c3e50; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
         .container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .frame-box { border: 2px dashed #95a5a6; padding: 10px; background: white; border-radius: 8px; }
-        .frame-label { font-weight: bold; color: #e67e22; margin-bottom: 5px; }
-        iframe { width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 4px; }
+        .frame-box { border: 20px solid #fff; padding: 10px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .frame-label { font-weight: bold; color: #e67e22; margin-bottom: 5px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        iframe { width: 100%; height: 220px; border: 1px solid #ddd; border-radius: 4px; }
         .footer { margin-top: 30px; font-size: 0.8em; color: #7f8c8d; }
         
         #click_status { margin-top: 10px; color: #27ae60; font-weight: bold; min-height: 1.5em; }
@@ -24,9 +24,9 @@
 </header>
 
 <div class="container">
-    <div class="frame-box" style="border-style: solid; border-color: #27ae60;">
-        <div class="frame-label" style="color: #27ae60;">Main Content (フレーム外 / 親画面)</div>
-        <p>ここはメインのドキュメントです。フレームに入る前にここを操作できます。</p>
+    <div class="frame-box" style="border-left: 5px solid #27ae60;">
+        <div class="frame-label" style="color: #27ae60;">Main Content (フレーム外)</div>
+        <p>ここはメインのドキュメントです。</p>
         <button id="main_button" onclick="showClickResult()">メインのボタン</button>
         <div id="click_status"></div>
     </div>
